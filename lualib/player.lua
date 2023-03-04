@@ -2,7 +2,6 @@
 
 local function on_player_built_tile(e)
 
-    if game.active_mods["vadatajs_landfill_removal"] then
         local setting_value = settings.global["ritnmods-waterfill-01"].value
         
         if setting_value == true then
@@ -45,7 +44,7 @@ local function on_player_built_tile(e)
             end
 
         end
-    end
+    
 end
 
 

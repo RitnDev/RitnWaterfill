@@ -1,12 +1,21 @@
-if mods["vadatajs_landfill_removal"] then 
 
     data:extend {
+
+        {
+            -- Activation du mode check d'entité
+            type = "bool-setting",
+            name = "ritnmods-waterfill-00",
+            setting_type = "startup",
+            default_value = true,
+            order = "ritnmods-waterfill-00"
+        },
+
         {
             -- Activation du bonus landfill
             type = "bool-setting",
             name = "ritnmods-waterfill-01",
             setting_type = "runtime-global",
-            default_value = false,
+            default_value = true,
             order = "ritnmods-waterfill-01"
         },
         {
@@ -31,4 +40,3 @@ if mods["vadatajs_landfill_removal"] then
         }
     }
 
-end
