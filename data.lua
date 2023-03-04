@@ -7,6 +7,9 @@ if not ritnmods then ritnmods = {} end
 if not ritnmods.waterfill then ritnmods.waterfill = {} end
 
 
+data.raw.tile.water.check_collision_with_entities = true
+data.raw.tile["deepwater"].check_collision_with_entities = true
+
 require("prototypes.items")
 require("prototypes.technologies")
 
