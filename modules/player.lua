@@ -10,6 +10,8 @@ local function on_player_built_tile(e)
             local tiles = e.tiles
             local LuaItemPrototype = e.item
            
+            if LuaItemPrototype == nil then return end
+            
             if  LuaItemPrototype.name == "waterfill"
             or LuaItemPrototype.name == "waterfill-dark" then
 

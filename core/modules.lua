@@ -1,4 +1,4 @@
 local modules = {}
-modules.player = require("lualib/player")
+modules.player = require("modules/player")
 
 return modules
