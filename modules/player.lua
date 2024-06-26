@@ -1,4 +1,8 @@
 -- Module : Player
+---------------------------------------------------
+local table = require(ritnlib.defines.table)
+local util = require(ritnlib.defines.other)
+---------------------------------------------------
 
 local function on_player_built_tile(e)
 
@@ -28,8 +32,10 @@ local function on_player_built_tile(e)
                 -------------------------------------------------------------------
                 local waterfill_value = settings.global["ritnmods-waterfill-02"].value  -- 20
                 local landfill_value = settings.global["ritnmods-waterfill-03"].value  --1
+                local nbTiles = util.ifElse(table.length(tiles) < 0, 0, table.length(tiles))
+
                 global.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name] = 
-                global.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name] + #tiles
+                global.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name] + nbTiles
 
                 pcall(function()
                     local value = global.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name]
