@@ -13,18 +13,18 @@ local function on_player_built_tile(e)
             local LuaSurface = game.surfaces[e.surface_index]
             local tiles = e.tiles
             local LuaItemPrototype = e.item
-           
+
             if LuaItemPrototype == nil then return end
             
             if  LuaItemPrototype.name == "waterfill"
             or LuaItemPrototype.name == "waterfill-dark" then
 
                 --- INITIALIZATION ---
-                if not global.players[LuaPlayer.name] then global.players[LuaPlayer.name] = {
+                if not storage.players[LuaPlayer.name] then storage.players[LuaPlayer.name] = {
                     surfaces = {}
                 } end
-                if not global.players[LuaPlayer.name].surfaces[LuaSurface.name] then 
-                    global.players[LuaPlayer.name].surfaces[LuaSurface.name] = {
+                if not storage.players[LuaPlayer.name].surfaces[LuaSurface.name] then 
+                    storage.players[LuaPlayer.name].surfaces[LuaSurface.name] = {
                         ["waterfill"] = 0,
                         ["waterfill-dark"] = 0
                     } 
@@ -34,19 +34,19 @@ local function on_player_built_tile(e)
                 local landfill_value = settings.global["ritnmods-waterfill-03"].value  --1
                 local nbTiles = util.ifElse(table.length(tiles) < 0, 0, table.length(tiles))
 
-                global.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name] = 
-                global.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name] + nbTiles
+                storage.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name] = 
+                storage.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name] + nbTiles
 
                 pcall(function()
-                    local value = global.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name]
+                    local value = storage.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name]
                     local result = math.floor(value / waterfill_value) * landfill_value
-      
+
                     if LuaPlayer.can_insert({name="landfill", count=result}) then 
                         LuaPlayer.insert({name="landfill", count=result})
                     end
                     
-                    global.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name] = 
-                    global.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name] - ((result*waterfill_value) / landfill_value)
+                    storage.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name] = 
+                    storage.players[LuaPlayer.name].surfaces[LuaSurface.name][LuaItemPrototype.name] - ((result*waterfill_value) / landfill_value)
                 end)
 
             end

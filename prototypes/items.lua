@@ -13,7 +13,8 @@ data:extend({
         {
           result = "water",
           condition_size = 1,
-          condition = { "water-tile" }
+          condition = {layers={water_tile=true}},
+          --tile_condition = {"water", "deepwater", "water-green", "deepwater-green"}
         }
     },
     {
@@ -34,7 +35,7 @@ data:extend({
       {
         result = "deepwater",
         condition_size = 1,
-        condition = { "water-tile" }
+        condition = {layers={water_tile=true}},
       }
   },
 
@@ -49,8 +50,10 @@ data:extend({
         {
           {type="fluid", name="water", amount=200}
         },
-        result= "waterfill",
-        result_count = 1
+        results = {
+          {type = "item", name = "waterfill", amount = 1}
+        },
+        result_is_always_fresh = true
     },
     {
       type = "recipe",
@@ -63,7 +66,9 @@ data:extend({
         {type="fluid", name="water", amount=200},
         {type="item", name="waterfill", amount=1}
       },
-      result= "waterfill-dark",
-      result_count = 1
+      results = {
+        {type = "item", name = "waterfill-dark", amount = 1}
+      },
+      result_is_always_fresh = true
     }
 })
