@@ -14,6 +14,11 @@ if setting_value then
   data.raw.tile["deepwater"].check_collision_with_entities = true
 end
 
+-- update 1.5.1 (pouvoir posé sur des souches d'arbres)
+data.raw.tile.water.collision_mask = {layers={water_tile=true, player=true, resource=true }}
+data.raw.tile["deepwater"].collision_mask = {layers={water_tile=true, player=true, resource=true }}
+
+-- add items, recipes and technology
 require("prototypes.items")
 require("prototypes.technologies")
 
