@@ -11,7 +11,6 @@ local setting_value = settings.startup["ritnmods-waterfill-00"].value
 
 if setting_value then
   data.raw.tile.water.check_collision_with_entities = true
-  data.raw.tile.water.collision_mask
   data.raw.tile["deepwater"].check_collision_with_entities = true
 end
 
