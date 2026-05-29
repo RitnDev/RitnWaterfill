@@ -9,8 +9,8 @@ local function on_player_built_tile(e)
         local setting_value = settings.global["ritnmods-waterfill-01"].value
         
         if setting_value == true then
-            local LuaPlayer = game.players[e.player_index]
-            local LuaSurface = game.surfaces[e.surface_index]
+            local LuaPlayer = game.get_player(e.player_index)
+            local LuaSurface = game.get_surface(e.surface_index)
             local tiles = e.tiles
             local LuaItemPrototype = e.item
 
