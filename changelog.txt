@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.6.0
+Date: 08.09.2026
+  Changes:
+    - Updated for Factorio 2.1.
+  Bugfixes:
+    - Fixed the waterfill recipes failing to load on Factorio 2.1, which merged a
+      recipe category into a categories list.
+    - Fixed waterfill and dark waterfill being able to spoil, after Factorio 2.1 moved
+      the always-fresh property from the recipe onto its result.

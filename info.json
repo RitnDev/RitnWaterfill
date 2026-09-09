@@ -1,14 +1,14 @@
 {
   "name": "RitnWaterfill",
-  "version": "1.5.5",
-  "factorio_version": "2.0",
+  "version": "1.6.0",
+  "factorio_version": "2.1",
   "title": "Waterfill",
   "author": "Ritn",
   "homepage": "",
   "description": "Placeable water. This mod allows the placement of water just like landfill.",
   "dependencies": [
     "base",
-    "RitnLib >= 0.9",
+    "RitnLib >= 0.11.0",
     "? vadatajs_landfill_removal",
     "! Waterfill_v17"
   ]
