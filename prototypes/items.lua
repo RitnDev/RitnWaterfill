@@ -45,30 +45,28 @@ data:extend({
         name = "waterfill",
         energy_required = 1,
         enabled = false,
-        category = "crafting-with-fluid",
+        categories = {"crafting-with-fluid"},
         ingredients =
         {
           {type="fluid", name="water", amount=200}
         },
         results = {
-          {type = "item", name = "waterfill", amount = 1}
-        },
-        result_is_always_fresh = true
+          {type = "item", name = "waterfill", amount = 1, always_fresh = true}
+        }
     },
     {
       type = "recipe",
       name = "waterfill-dark",
       energy_required = 1,
       enabled = false,
-      category = "crafting-with-fluid",
+      categories = {"crafting-with-fluid"},
       ingredients =
       {
         {type="fluid", name="water", amount=200},
         {type="item", name="waterfill", amount=1}
       },
       results = {
-        {type = "item", name = "waterfill-dark", amount = 1}
-      },
-      result_is_always_fresh = true
+        {type = "item", name = "waterfill-dark", amount = 1, always_fresh = true}
+      }
     }
 })
