@@ -5,7 +5,7 @@ data:extend({
         name = "waterfill",
         icon = "__RitnWaterfill__/graphics/waterfill.png",
         prerequisites = {"landfill"},
-        icon_size = 128, icon_mipmaps = 5,
+        icon_size = 128,
         unit =
         {
         count = 50,
@@ -31,8 +31,7 @@ data:extend({
         icons = {
             {
               icon = "__RitnWaterfill__/graphics/waterfill.png",
-              icon_size = 128, 
-              icon_mipmaps = 5,
+              icon_size = 128,
               tint = { a = 1,  b = 0.8, g = 0.4, r = 0 }
             }
         },
